@@ -39,7 +39,7 @@
 # Copyright 2016 Robin Laurén / Reaktor
 #
 
-define macdefaults(
+class macdefaults(
   $ensure = 'present',
   $domain = undef,
   $key    = undef,
@@ -99,7 +99,7 @@ define macdefaults(
 
 # Note that type can be one of:
 # string, data, int, float, bool, data, array, array-add, dict, dict-add
-define mac-defaults($domain, $key, $value = false, $type = "string", $action = "write") {
+define mac_defaults($domain, $key, $value = false, $type = "string", $action = "write") {
 case $operatingsystem {
  Darwin:{
   case $action {
@@ -126,9 +126,5 @@ case $operatingsystem {
  }
 }
 
-
-}
-
-class macdefaults{
 
 }
