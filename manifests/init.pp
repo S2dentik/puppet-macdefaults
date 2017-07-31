@@ -69,7 +69,7 @@ class macdefaults(
               }
             }
           } else {
-            warn ("macdefaults cannot ensure present without domain, key and value attributes")
+            warning("macdefaults cannot ensure present without domain, key and value attributes")
           }
         }
 
@@ -80,17 +80,17 @@ class macdefaults(
               onlyif  => "${defaults_cmd} read ${domain} | egrep '^${key}$''",
             }
           } else {
-            warn ("macdefaults cannot ensure absent without domain and key attributes")
+            warning("macdefaults cannot ensure absent without domain and key attributes")
           }
         }
 
         default: {
-          warn ("macdefaults ensure => [present | absent] domain key type value")
+          warning("macdefaults ensure => [present | absent] domain key type value")
         }
       }
     }
     default: {
-      warn ("macdefaults only work on OS X")
+      warning("macdefaults only work on OS X")
     }
   }
 }
